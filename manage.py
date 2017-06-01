@@ -1,6 +1,10 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 import os
 import sys
+import pymysql
+# u"mysql利用のために入れている"
+pymysql.install_as_MySQLdb()
 
 if __name__ == "__main__":
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_tutorial.settings")
