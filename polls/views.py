@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render
+from django.shortcuts import render,get_object_or_404
 from django.http import Http404
 
-from .models import Question
+from .models import Question, Choice
+from django.urls import reverse
 
 
 def index(request):
@@ -45,5 +46,4 @@ def vote(request, question_id):
         selected_choice.save()
         
         return HttpResponseRedirect(
-            reverse('polls:results', args=(question.id,))
-        )
+            reverse('polls:results', args=(question.id,)))
